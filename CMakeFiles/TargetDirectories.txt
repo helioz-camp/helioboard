@@ -1,0 +1,3 @@
+/Users/raphael/helioboard/CMakeFiles/edit_cache.dir
+/Users/raphael/helioboard/CMakeFiles/rebuild_cache.dir
+/Users/raphael/helioboard/CMakeFiles/helioboard.dir
