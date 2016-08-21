@@ -1,7 +1,8 @@
 #include "blooms.h"
 
+int hueBase = 0;
+
 BloomsState::BloomsState() {
-	colorI = 0;
 }
 
 
@@ -24,21 +25,32 @@ vector<pair<int, int>> Bloom::getPoints() {
 }
 
 void Blooms::render(Frame &frame) {
-	setColor(frame, OFF);
+	setAll(frame, OFF);
 
 	for (Bloom &b: state->blooms) {
 		for (auto &p : b.getPoints()) {
-			setCell(frame, get<0>(p), get<1>(p), getColor(b.colorI));
+			setCell(frame, get<0>(p), get<1>(p), b.color);
 		}
 	}
 
+	if ((state->hz("event_name", 1)) && (rand() % 3 < 2)) {
+		Player::play("/Users/raphael/Downloads/foobaz/bird-shot.wav");
+
+		Bloom b;
+		b.x = rand() % LEN;
+		b.y = rand() % LEN;
+		b.width = 1;
+		b.color = Color(hueBase + rand() % 45, 255);
+		state->blooms.push_back(b);
+		hueBase = (hueBase + 10) % 255;
+	}
 }
 
 void Blooms::update(vector<Event> events) {
-	if (state->hz("bloom", 10)){
+	if (state->hz("bloom", 8)){
 		int i = 0;
 		for (Bloom &b: state->blooms) {
-			Player::play("/Users/raphael/Downloads/foobaz/66-rim-03.wav");
+			Player::play("/Users/raphael/Downloads/foobaz/bird-shot.wav");
 			b.x--;
 			b.y--;
 			b.width += 2;
@@ -54,8 +66,6 @@ void Blooms::update(vector<Event> events) {
 				}
 			}
 
-			cout << "PLAYING " << state->blooms.size() << " " << allOver << endl;
-
 			if (allOver) {
 				state->blooms.erase(state->blooms.begin() + i);
 			} else {
@@ -67,19 +77,18 @@ void Blooms::update(vector<Event> events) {
 	int nEvents = events.size();
 	if (nEvents == 0) return;
 
-	for (Event &e : events) {
-		if (e.on) {
-			Player::play("/Users/raphael/Downloads/foobaz/66-per-08.wav");
+	// for (Event &e : events) {
+	// 	if (e.on) {
+	// 		Player::play("/Users/raphael/Downloads/foobaz/66-per-08.wav");
 
-			Bloom b;
-			b.x = e.x;
-			b.y = e.y;
-			b.width = 1;
-			b.colorI = state->colorI;
-			state->colorI = (state->colorI + 1) % 4; 
-			state->blooms.push_back(b);
-		}
-	}
+	// 		Bloom b;
+	// 		b.x = e.x;
+	// 		b.y = e.y;
+	// 		b.width = 1;
+	// 		b.color = Color(rand() % 255, 255);
+	// 		state->blooms.push_back(b);
+	// 	}
+	// }
 }
 
 

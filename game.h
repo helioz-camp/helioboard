@@ -11,64 +11,87 @@
 #include <signal.h>
 #include "RtMidi.h"
 #include "sounds.h"
-
-#define LEN 9
-
-#define OFF 0
-#define RED 3
-#define ORANGE 23
-#define AMBER 51
-#define GREEN 48
+#include "color.h"
 
 using namespace std;
 
 
-typedef array< array<int, LEN>, LEN > Frame;
+#define LEN 18
+#define BOARD_LEN 9
+
+typedef array< array<Color, LEN>, LEN > Frame;
+typedef array< array<int, BOARD_LEN>, BOARD_LEN > ControlFrame;
 typedef array< array<bool, LEN>, LEN > BoolFrame;
 
 
 class State {
 public:
-	State() {};
-	~State() {};
+    State() {};
+    ~State() {};
 
-	bool hz(string key, double perSecond);
-	
+    bool hz(string key, double perSecond);
+    
 private:
-	unordered_map<string, chrono::time_point<chrono::system_clock>> hzRegistry;
+    unordered_map<string, chrono::time_point<chrono::system_clock>> hzRegistry;
 };
 
 class Event {
 public:
-	Event(int x, int y, bool on) {
-		this->x = x;
-		this->y = y;
-		this->on = on;
-	}
-	int x;
-	int y;
-	bool on;
+    Event(int x, int y, bool on) {
+        this->x = x;
+        this->y = y;
+        this->on = on;
+    }
+    int x;
+    int y;
+    bool on;
 };
 
 class Game {
 public:
-	Game() {};
-	~Game() {};
+    Game() {};
+    ~Game() {};
 
-	virtual void update(vector<Event> events) = 0;
+    virtual void update(vector<Event> events) = 0;
 
-	virtual void render(Frame &frame) = 0;
+    virtual void render(Frame &frame) = 0;
 
-	void setColor(Frame &frame, int color);
-	int getColor(int colorI);
+    void setAll(Frame &frame, Color color);
 
-	void printFrame(Frame &frame);
+    void setCell(Frame &frame, int x, int y, Color color);
 
-	void setCell(Frame &frame, int x, int y, int color);
+    bool inBounds(int x, int y);
+    bool isCorner(int x, int y);
 
-	bool inBounds(int x, int y);
 private:
-	State *state;
+    State *state;
+};
+
+class Renderer;
+
+class Controller {
+public:
+    Controller(int numGames) {
+        this->numGames = numGames;
+    };
+    ~Controller() {};
+
+    virtual void update(vector<Event> events) = 0;
+
+    virtual void render(ControlFrame &frame) = 0;
+
+    void setAll(ControlFrame &frame, int color);
+
+    void setCell(ControlFrame &frame, int x, int y, int color);
+
+    bool inBounds(int x, int y);
+    bool isCorner(int x, int y);
+
+    int numGames;
+
+private:
+    State *state;
+    Renderer *renderer;
 };
 
 #endif

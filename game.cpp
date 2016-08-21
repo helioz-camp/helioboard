@@ -16,7 +16,7 @@ bool State::hz(string key, double perSecond) {
 	return false;
 }
 
-void Game::setColor(Frame &frame, int color) {
+void Game::setAll(Frame &frame, Color color) {
 	for (int y = 0; y < LEN; y++) {
 		for (int x = 0; x < LEN; x++) {
 			frame[y][x] = color;
@@ -24,52 +24,36 @@ void Game::setColor(Frame &frame, int color) {
 	}
 }
 
-int Game::getColor(int colorI) {
-	int colors[] = {
-		RED,
-		ORANGE,
-		AMBER,
-		GREEN
-	};
-
-	return colors[colorI];
-}
-
-void Game::printFrame(Frame &frame) {
-	for (int y = 0; y < LEN; y++) {
-		for (int x = 0; x < LEN; x++) {
-			char c;
-			switch (frame[y][x]) {
-			case OFF:
-				c = 'X';
-				break;
-			case RED:
-				c = 'R';
-				break;
-			case ORANGE:
-				c = 'O';
-				break;
-			case AMBER:
-				c = 'A';
-				break;
-			case GREEN:
-				c = 'G';
-				break;
-			default:
-				c = 'U';
-				break;
-			}
-			cout << c;
-		}
-		cout << endl;
-	}
-}
-
 bool Game::inBounds(int x, int y) {
 	return x >= 0 && y >= 0 && x < LEN && y < LEN;
 }
 
-void Game::setCell(Frame &frame, int x, int y, int color) {
+bool Game::isCorner(int x, int y) {
+	return (x == 0 || x == LEN - 1) && (y == 0 || y == LEN - 1);
+}
+
+void Game::setCell(Frame &frame, int x, int y, Color color) {
+	if (!inBounds(x, y)) return;
+	frame[y][x] = color;
+}
+
+void Controller::setAll(ControlFrame &frame, int color) {
+	for (int y = 0; y < BOARD_LEN; y++) {
+		for (int x = 0; x < BOARD_LEN; x++) {
+			frame[y][x] = color;
+		}
+	}
+}
+
+bool Controller::inBounds(int x, int y) {
+	return x >= 0 && y >= 0 && x < BOARD_LEN && y < BOARD_LEN;
+}
+
+bool Controller::isCorner(int x, int y) {
+	return y == 0 && x == BOARD_LEN - 1;
+}
+
+void Controller::setCell(ControlFrame &frame, int x, int y, int color) {
 	if (!inBounds(x, y)) return;
 	frame[y][x] = color;
 }

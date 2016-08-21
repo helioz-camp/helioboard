@@ -9,7 +9,7 @@ public:
 	int x;
 	int y;
 	int width;
-	int colorI;
+	Color color;
 
 	vector<pair<int, int>> getPoints();
 };
@@ -20,7 +20,6 @@ public:
 	~BloomsState() {};
 
 	vector<Bloom> blooms;
-	int colorI;
 };
 
 class Blooms : public Game

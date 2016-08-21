@@ -3,27 +3,46 @@
 
 CMakeFiles/helioboard.dir/blooms.cpp.o: blooms.cpp
 CMakeFiles/helioboard.dir/blooms.cpp.o: blooms.h
+CMakeFiles/helioboard.dir/blooms.cpp.o: color.h
 CMakeFiles/helioboard.dir/blooms.cpp.o: game.h
 CMakeFiles/helioboard.dir/blooms.cpp.o: sounds.h
 
+CMakeFiles/helioboard.dir/canvas.cpp.o: canvas.cpp
+CMakeFiles/helioboard.dir/canvas.cpp.o: canvas.h
+CMakeFiles/helioboard.dir/canvas.cpp.o: color.h
+CMakeFiles/helioboard.dir/canvas.cpp.o: game.h
+CMakeFiles/helioboard.dir/canvas.cpp.o: sounds.h
+
+CMakeFiles/helioboard.dir/fill.cpp.o: color.h
 CMakeFiles/helioboard.dir/fill.cpp.o: fill.cpp
 CMakeFiles/helioboard.dir/fill.cpp.o: fill.h
 CMakeFiles/helioboard.dir/fill.cpp.o: game.h
 CMakeFiles/helioboard.dir/fill.cpp.o: sounds.h
 
+CMakeFiles/helioboard.dir/game.cpp.o: color.h
 CMakeFiles/helioboard.dir/game.cpp.o: game.cpp
 CMakeFiles/helioboard.dir/game.cpp.o: game.h
 CMakeFiles/helioboard.dir/game.cpp.o: sounds.h
 
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o: color.h
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o: game.h
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o: gridcontroller.cpp
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o: gridcontroller.h
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o: sounds.h
+
 CMakeFiles/helioboard.dir/helioboard.cpp.o: Game.h
 CMakeFiles/helioboard.dir/helioboard.cpp.o: blooms.h
+CMakeFiles/helioboard.dir/helioboard.cpp.o: canvas.h
+CMakeFiles/helioboard.dir/helioboard.cpp.o: color.h
 CMakeFiles/helioboard.dir/helioboard.cpp.o: fill.h
 CMakeFiles/helioboard.dir/helioboard.cpp.o: game.h
+CMakeFiles/helioboard.dir/helioboard.cpp.o: gridcontroller.h
 CMakeFiles/helioboard.dir/helioboard.cpp.o: helioboard.cpp
 CMakeFiles/helioboard.dir/helioboard.cpp.o: renderer.h
 CMakeFiles/helioboard.dir/helioboard.cpp.o: sounds.h
 
 CMakeFiles/helioboard.dir/renderer.cpp.o: Game.h
+CMakeFiles/helioboard.dir/renderer.cpp.o: color.h
 CMakeFiles/helioboard.dir/renderer.cpp.o: renderer.cpp
 CMakeFiles/helioboard.dir/renderer.cpp.o: renderer.h
 CMakeFiles/helioboard.dir/renderer.cpp.o: sounds.h

@@ -37,12 +37,12 @@ public:
 
 			catch(curlpp::RuntimeError & e)
 			{
-				std::cout << e.what() << std::endl;
+				// std::cout << e.what() << std::endl;
 			}
 
 			catch(curlpp::LogicError & e)
 			{
-				std::cout << e.what() << std::endl;
+				// std::cout << e.what() << std::endl;
 			}
 
 	}

@@ -150,6 +150,33 @@ blooms.cpp.s:
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/blooms.cpp.s
 .PHONY : blooms.cpp.s
 
+canvas.o: canvas.cpp.o
+
+.PHONY : canvas.o
+
+# target to build an object file
+canvas.cpp.o:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/canvas.cpp.o
+.PHONY : canvas.cpp.o
+
+canvas.i: canvas.cpp.i
+
+.PHONY : canvas.i
+
+# target to preprocess a source file
+canvas.cpp.i:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/canvas.cpp.i
+.PHONY : canvas.cpp.i
+
+canvas.s: canvas.cpp.s
+
+.PHONY : canvas.s
+
+# target to generate assembly for a file
+canvas.cpp.s:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/canvas.cpp.s
+.PHONY : canvas.cpp.s
+
 fill.o: fill.cpp.o
 
 .PHONY : fill.o
@@ -203,6 +230,33 @@ game.s: game.cpp.s
 game.cpp.s:
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/game.cpp.s
 .PHONY : game.cpp.s
+
+gridcontroller.o: gridcontroller.cpp.o
+
+.PHONY : gridcontroller.o
+
+# target to build an object file
+gridcontroller.cpp.o:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/gridcontroller.cpp.o
+.PHONY : gridcontroller.cpp.o
+
+gridcontroller.i: gridcontroller.cpp.i
+
+.PHONY : gridcontroller.i
+
+# target to preprocess a source file
+gridcontroller.cpp.i:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/gridcontroller.cpp.i
+.PHONY : gridcontroller.cpp.i
+
+gridcontroller.s: gridcontroller.cpp.s
+
+.PHONY : gridcontroller.s
+
+# target to generate assembly for a file
+gridcontroller.cpp.s:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/gridcontroller.cpp.s
+.PHONY : gridcontroller.cpp.s
 
 helioboard.o: helioboard.cpp.o
 
@@ -270,12 +324,18 @@ help:
 	@echo "... blooms.o"
 	@echo "... blooms.i"
 	@echo "... blooms.s"
+	@echo "... canvas.o"
+	@echo "... canvas.i"
+	@echo "... canvas.s"
 	@echo "... fill.o"
 	@echo "... fill.i"
 	@echo "... fill.s"
 	@echo "... game.o"
 	@echo "... game.i"
 	@echo "... game.s"
+	@echo "... gridcontroller.o"
+	@echo "... gridcontroller.i"
+	@echo "... gridcontroller.s"
 	@echo "... helioboard.o"
 	@echo "... helioboard.i"
 	@echo "... helioboard.s"

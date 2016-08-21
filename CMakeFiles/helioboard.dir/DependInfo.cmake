@@ -5,8 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/raphael/helioboard/blooms.cpp" "/Users/raphael/helioboard/CMakeFiles/helioboard.dir/blooms.cpp.o"
+  "/Users/raphael/helioboard/canvas.cpp" "/Users/raphael/helioboard/CMakeFiles/helioboard.dir/canvas.cpp.o"
   "/Users/raphael/helioboard/fill.cpp" "/Users/raphael/helioboard/CMakeFiles/helioboard.dir/fill.cpp.o"
   "/Users/raphael/helioboard/game.cpp" "/Users/raphael/helioboard/CMakeFiles/helioboard.dir/game.cpp.o"
+  "/Users/raphael/helioboard/gridcontroller.cpp" "/Users/raphael/helioboard/CMakeFiles/helioboard.dir/gridcontroller.cpp.o"
   "/Users/raphael/helioboard/helioboard.cpp" "/Users/raphael/helioboard/CMakeFiles/helioboard.dir/helioboard.cpp.o"
   "/Users/raphael/helioboard/renderer.cpp" "/Users/raphael/helioboard/CMakeFiles/helioboard.dir/renderer.cpp.o"
   )

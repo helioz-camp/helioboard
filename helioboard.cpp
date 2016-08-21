@@ -5,34 +5,12 @@
 #include "RtMidi.h"
 #include "blooms.h"
 #include "fill.h"
+#include "canvas.h"
 #include "renderer.h"
-
+#include "gridcontroller.h"
 
 using namespace std;
 
-bool init(RtMidi *midi) {
-  bool found = false;
-  unsigned int nPorts = midi->getPortCount();
-  if (nPorts == 0) {
-    cout << "No ports available!\n";
-    Player::play("/Users/raphael/Downloads/foobaz/66-rim-03.wav");
-    return false;
-  }
-  for (int i = 0; i < nPorts; i++) {
-    string name = midi->getPortName(i);
-    if (name == "Launchpad") {
-      midi->openPort( 0 );
-      found = true;
-      break;
-    }
-  }
-  if (!found) {
-    cout << "Launchpad not found!\n";
-    return false;
-  }
-  return true;
-
-}
 
 Renderer *renderer = NULL;
 
@@ -41,17 +19,69 @@ void finish(int sig) {
 }
 
 int main() {
-  RtMidiIn *in = new RtMidiIn();
-  RtMidiOut *out = new RtMidiOut();
+  vector<Board> boards;
+  vector<Board> orderedBoards;
 
-  renderer = new Renderer(out, in);
-  renderer->game = new Blooms();
+  RtMidiIn *explorer = new RtMidiIn();
 
-  if (!init(in) || !init(out)) {
-    goto cleanup;
+  unsigned int nPorts = explorer->getPortCount();
+
+  if (nPorts == 0) {
+    cout << "No ports available!\n";
+    return false;
   }
 
-  in->ignoreTypes(false, false, false);
+  for (int i = 0; i < nPorts; i++) {
+    string name = explorer->getPortName(i);
+
+    if (name.find("Launchpad") != string::npos) {
+      Board b;
+      b.in = new RtMidiIn();
+      b.out = new RtMidiOut();
+
+
+      b.in->openPort(i);
+      b.out->openPort(i);
+
+      b.in->ignoreTypes(false, false, false);
+
+      boards.push_back(b);
+    }
+  }
+
+  if (boards.size() != 5) {
+    cout << "Must connect to exactly 4 boards";
+    return false;
+  }
+
+  cout << "Touch each square board, clockwise starting from top left. Then, the control board." << endl;
+
+
+  Message message;
+  while (true) {
+    bool done = true;
+
+    for (auto &b: boards) {
+      if (b.ordered) continue;
+      done = false;
+
+      Message message;
+      b.in->getMessage(&message);
+
+      if (message.size() > 0) {
+        b.ordered = true;
+        orderedBoards.push_back(b);
+      }
+
+    }
+
+    if (done) break;
+  }
+ 
+  renderer = new Renderer(orderedBoards);
+  renderer->game = new Blooms();
+  renderer->controller = new GridController(2);
+
   
   cout << "Reading MIDI from port ... quit with Ctrl-C.\n";
 
@@ -59,8 +89,4 @@ int main() {
 
   renderer->loop();
 
- cleanup:
-  delete in;
-  delete out;
-  return 0;
 }

@@ -11,6 +11,6 @@ pkg_check_modules(CURL REQUIRED curlpp)
 include_directories(${CURLINCLUDE_DIRS})
 link_directories(${CURLLIBRARY_DIRS})
 
-add_executable(helioboard blooms.cpp fill.cpp game.cpp renderer.cpp helioboard.cpp)
+add_executable(helioboard blooms.cpp fill.cpp game.cpp gridcontroller.cpp canvas.cpp renderer.cpp helioboard.cpp)
 
 target_link_libraries(helioboard rtmidi ${CURL_LIBRARIES})

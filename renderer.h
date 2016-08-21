@@ -11,28 +11,37 @@
 
 typedef vector<unsigned char> Message;
 
+struct Board {
+	RtMidiOut *out;
+	RtMidiIn *in;
+	bool ordered = false;
+};
+
 class Renderer
 {
 public:
-	Renderer(RtMidiOut *out, RtMidiIn *in);
+	Renderer(vector<Board> boards);
 
 	~Renderer();
 
 	void loop();
 	void finish();
+	void clear();
 
 	Game *game;
+	Controller *controller;
 
 private:
-	void smartRender(Frame &frame);
-	Event getEvent(Message &m);
-	void setBuffering(int display, int update);
+	void renderGame(Frame &gameFrame);
+	void renderControl(ControlFrame &controlFrame);
+	Event getEvent(Message &m, int boardIndex);
+	Event getEventOld(Message &m);
 
 	bool done = false;
 	Frame lastFrame;
+	ControlFrame lastControlFrame;
 
-	RtMidiOut *out;
-	RtMidiIn *in;
+	vector<Board> boards;
 };
 
 #endif

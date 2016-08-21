@@ -129,9 +129,57 @@ CMakeFiles/helioboard.dir/game.cpp.o.provides: CMakeFiles/helioboard.dir/game.cp
 CMakeFiles/helioboard.dir/game.cpp.o.provides.build: CMakeFiles/helioboard.dir/game.cpp.o
 
 
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o: CMakeFiles/helioboard.dir/flags.make
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o: gridcontroller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/helioboard.dir/gridcontroller.cpp.o"
+	g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/helioboard.dir/gridcontroller.cpp.o -c /Users/raphael/helioboard/gridcontroller.cpp
+
+CMakeFiles/helioboard.dir/gridcontroller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/helioboard.dir/gridcontroller.cpp.i"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/raphael/helioboard/gridcontroller.cpp > CMakeFiles/helioboard.dir/gridcontroller.cpp.i
+
+CMakeFiles/helioboard.dir/gridcontroller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/helioboard.dir/gridcontroller.cpp.s"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/raphael/helioboard/gridcontroller.cpp -o CMakeFiles/helioboard.dir/gridcontroller.cpp.s
+
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o.requires:
+
+.PHONY : CMakeFiles/helioboard.dir/gridcontroller.cpp.o.requires
+
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o.provides: CMakeFiles/helioboard.dir/gridcontroller.cpp.o.requires
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/gridcontroller.cpp.o.provides.build
+.PHONY : CMakeFiles/helioboard.dir/gridcontroller.cpp.o.provides
+
+CMakeFiles/helioboard.dir/gridcontroller.cpp.o.provides.build: CMakeFiles/helioboard.dir/gridcontroller.cpp.o
+
+
+CMakeFiles/helioboard.dir/canvas.cpp.o: CMakeFiles/helioboard.dir/flags.make
+CMakeFiles/helioboard.dir/canvas.cpp.o: canvas.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/helioboard.dir/canvas.cpp.o"
+	g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/helioboard.dir/canvas.cpp.o -c /Users/raphael/helioboard/canvas.cpp
+
+CMakeFiles/helioboard.dir/canvas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/helioboard.dir/canvas.cpp.i"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/raphael/helioboard/canvas.cpp > CMakeFiles/helioboard.dir/canvas.cpp.i
+
+CMakeFiles/helioboard.dir/canvas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/helioboard.dir/canvas.cpp.s"
+	g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/raphael/helioboard/canvas.cpp -o CMakeFiles/helioboard.dir/canvas.cpp.s
+
+CMakeFiles/helioboard.dir/canvas.cpp.o.requires:
+
+.PHONY : CMakeFiles/helioboard.dir/canvas.cpp.o.requires
+
+CMakeFiles/helioboard.dir/canvas.cpp.o.provides: CMakeFiles/helioboard.dir/canvas.cpp.o.requires
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/canvas.cpp.o.provides.build
+.PHONY : CMakeFiles/helioboard.dir/canvas.cpp.o.provides
+
+CMakeFiles/helioboard.dir/canvas.cpp.o.provides.build: CMakeFiles/helioboard.dir/canvas.cpp.o
+
+
 CMakeFiles/helioboard.dir/renderer.cpp.o: CMakeFiles/helioboard.dir/flags.make
 CMakeFiles/helioboard.dir/renderer.cpp.o: renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/helioboard.dir/renderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/helioboard.dir/renderer.cpp.o"
 	g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/helioboard.dir/renderer.cpp.o -c /Users/raphael/helioboard/renderer.cpp
 
 CMakeFiles/helioboard.dir/renderer.cpp.i: cmake_force
@@ -155,7 +203,7 @@ CMakeFiles/helioboard.dir/renderer.cpp.o.provides.build: CMakeFiles/helioboard.d
 
 CMakeFiles/helioboard.dir/helioboard.cpp.o: CMakeFiles/helioboard.dir/flags.make
 CMakeFiles/helioboard.dir/helioboard.cpp.o: helioboard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/helioboard.dir/helioboard.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/helioboard.dir/helioboard.cpp.o"
 	g++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/helioboard.dir/helioboard.cpp.o -c /Users/raphael/helioboard/helioboard.cpp
 
 CMakeFiles/helioboard.dir/helioboard.cpp.i: cmake_force
@@ -182,6 +230,8 @@ helioboard_OBJECTS = \
 "CMakeFiles/helioboard.dir/blooms.cpp.o" \
 "CMakeFiles/helioboard.dir/fill.cpp.o" \
 "CMakeFiles/helioboard.dir/game.cpp.o" \
+"CMakeFiles/helioboard.dir/gridcontroller.cpp.o" \
+"CMakeFiles/helioboard.dir/canvas.cpp.o" \
 "CMakeFiles/helioboard.dir/renderer.cpp.o" \
 "CMakeFiles/helioboard.dir/helioboard.cpp.o"
 
@@ -191,11 +241,13 @@ helioboard_EXTERNAL_OBJECTS =
 helioboard: CMakeFiles/helioboard.dir/blooms.cpp.o
 helioboard: CMakeFiles/helioboard.dir/fill.cpp.o
 helioboard: CMakeFiles/helioboard.dir/game.cpp.o
+helioboard: CMakeFiles/helioboard.dir/gridcontroller.cpp.o
+helioboard: CMakeFiles/helioboard.dir/canvas.cpp.o
 helioboard: CMakeFiles/helioboard.dir/renderer.cpp.o
 helioboard: CMakeFiles/helioboard.dir/helioboard.cpp.o
 helioboard: CMakeFiles/helioboard.dir/build.make
 helioboard: CMakeFiles/helioboard.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable helioboard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable helioboard"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/helioboard.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -206,6 +258,8 @@ CMakeFiles/helioboard.dir/build: helioboard
 CMakeFiles/helioboard.dir/requires: CMakeFiles/helioboard.dir/blooms.cpp.o.requires
 CMakeFiles/helioboard.dir/requires: CMakeFiles/helioboard.dir/fill.cpp.o.requires
 CMakeFiles/helioboard.dir/requires: CMakeFiles/helioboard.dir/game.cpp.o.requires
+CMakeFiles/helioboard.dir/requires: CMakeFiles/helioboard.dir/gridcontroller.cpp.o.requires
+CMakeFiles/helioboard.dir/requires: CMakeFiles/helioboard.dir/canvas.cpp.o.requires
 CMakeFiles/helioboard.dir/requires: CMakeFiles/helioboard.dir/renderer.cpp.o.requires
 CMakeFiles/helioboard.dir/requires: CMakeFiles/helioboard.dir/helioboard.cpp.o.requires
 

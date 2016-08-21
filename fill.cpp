@@ -16,13 +16,13 @@ Fill::Fill() {
 }
 
 void Fill::render(Frame &frame) {
-	setColor(frame, OFF);
+	setAll(frame, OFF);
 
 	frame = state->filled;
-	if (state->exploding && state->hz("explodingRender", 5)) {
+	if (state->exploding && state->hz("explodingRender", 1)) {
 		for (int y = 0; y < LEN; y++) {
 			for (int x = 0; x < LEN; x++) {
-				setCell(frame, x, y, getColor(rand() % 4));
+				setCell(frame, x, y, Color(rand() % 255, 255));
 			}
 		}
 	}
@@ -31,10 +31,10 @@ void Fill::render(Frame &frame) {
 void Fill::update(vector<Event> events) {
 	for (Event &e : events) {
 		if (e.on && state->filled[e.y][e.x] == OFF) {
-			state->filled[e.y][e.x] = getColor(rand() % 4);
+			state->filled[e.y][e.x] = Color(rand() % 255, 255);
 			ostringstream ss;
-			// char letter = 'a' + (state->textCount++);
-			char letter = state->text[state->textCount++];
+			char letter = 'a' + (rand() % 26);
+			// char letter = state->text[state->textCount++];
 			ss << "/Users/raphael/Downloads/foobaz/";
 			ss << letter;
 			ss << ".aif.wav";
@@ -65,8 +65,8 @@ void Fill::update(vector<Event> events) {
 
 	for (int y = 0; y < LEN; y++) {
 		for (int x = 0; x < LEN; x++) {
-			if (y == 0 && x == LEN - 1) continue;
-			if (!state->filled[y][x]) {
+			if (isCorner(x, y)) continue;
+			if (state->filled[y][x] == OFF) {
 				return;
 			}
 		}
