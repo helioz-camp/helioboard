@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /Users/raphael/helioboard
 CMakeFiles/helioboard.dir/all:
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/depend
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target helioboard"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/raphael/helioboard/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target helioboard"
 .PHONY : CMakeFiles/helioboard.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/helioboard.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/helioboard.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/raphael/helioboard/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/raphael/helioboard/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/helioboard.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/raphael/helioboard/CMakeFiles 0
 .PHONY : CMakeFiles/helioboard.dir/rule

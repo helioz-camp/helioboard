@@ -24,11 +24,7 @@ void Canvas::update(vector<Event> events) {
 	for (Event &e : events) {
 		if (e.on) {
 			if (state->filled[e.y][e.x] == OFF) {
-				// random colors
-				// state->filled[e.y][e.x] = Color(rand() % 255, 255);
-
-				// hue gradient
-				state->filled[e.y][e.x] = Color((e.x / 17.0) * 255, (e.y / 17.0) * 255);
+				state->filled[e.y][e.x] = Color(rand() % 255, 255);
 			} else {
 				state->filled[e.y][e.x] = OFF;
 			}

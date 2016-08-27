@@ -31,6 +31,10 @@ public:
 	Game *game;
 	Controller *controller;
 
+	vector<Game *> games;
+
+	void setGame(int gameIndex);
+
 private:
 	void renderGame(Frame &gameFrame);
 	void renderControl(ControlFrame &controlFrame);

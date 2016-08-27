@@ -1,7 +1,5 @@
 #include "blooms.h"
 
-int hueBase = 0;
-
 BloomsState::BloomsState() {
 }
 
@@ -33,17 +31,17 @@ void Blooms::render(Frame &frame) {
 		}
 	}
 
-	if ((state->hz("event_name", 1)) && (rand() % 3 < 2)) {
-		Player::play("/Users/raphael/Downloads/foobaz/bird-shot.wav");
+	// if ((state->hz("event_name", 1)) && (rand() % 3 < 2)) {
+	// 	Player::play("/Users/raphael/Downloads/foobaz/bird-shot.wav");
 
-		Bloom b;
-		b.x = rand() % LEN;
-		b.y = rand() % LEN;
-		b.width = 1;
-		b.color = Color(hueBase + rand() % 45, 255);
-		state->blooms.push_back(b);
-		hueBase = (hueBase + 10) % 255;
-	}
+	// 	Bloom b;
+	// 	b.x = rand() % LEN;
+	// 	b.y = rand() % LEN;
+	// 	b.width = 1;
+	// 	b.color = Color(hueBase + rand() % 45, 255);
+	// 	state->blooms.push_back(b);
+	// 	hueBase = (hueBase + 10) % 255;
+	// }
 }
 
 void Blooms::update(vector<Event> events) {
@@ -77,18 +75,18 @@ void Blooms::update(vector<Event> events) {
 	int nEvents = events.size();
 	if (nEvents == 0) return;
 
-	// for (Event &e : events) {
-	// 	if (e.on) {
-	// 		Player::play("/Users/raphael/Downloads/foobaz/66-per-08.wav");
+	for (Event &e : events) {
+		if (e.on) {
+			Player::play("/Users/raphael/Downloads/foobaz/66-per-08.wav");
 
-	// 		Bloom b;
-	// 		b.x = e.x;
-	// 		b.y = e.y;
-	// 		b.width = 1;
-	// 		b.color = Color(rand() % 255, 255);
-	// 		state->blooms.push_back(b);
-	// 	}
-	// }
+			Bloom b;
+			b.x = e.x;
+			b.y = e.y;
+			b.width = 1;
+			b.color = Color(rand() % 255, 255);
+			state->blooms.push_back(b);
+		}
+	}
 }
 
 

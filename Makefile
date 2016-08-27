@@ -177,6 +177,87 @@ canvas.cpp.s:
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/canvas.cpp.s
 .PHONY : canvas.cpp.s
 
+cellstrobe.o: cellstrobe.cpp.o
+
+.PHONY : cellstrobe.o
+
+# target to build an object file
+cellstrobe.cpp.o:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/cellstrobe.cpp.o
+.PHONY : cellstrobe.cpp.o
+
+cellstrobe.i: cellstrobe.cpp.i
+
+.PHONY : cellstrobe.i
+
+# target to preprocess a source file
+cellstrobe.cpp.i:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/cellstrobe.cpp.i
+.PHONY : cellstrobe.cpp.i
+
+cellstrobe.s: cellstrobe.cpp.s
+
+.PHONY : cellstrobe.s
+
+# target to generate assembly for a file
+cellstrobe.cpp.s:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/cellstrobe.cpp.s
+.PHONY : cellstrobe.cpp.s
+
+circleblooms.o: circleblooms.cpp.o
+
+.PHONY : circleblooms.o
+
+# target to build an object file
+circleblooms.cpp.o:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/circleblooms.cpp.o
+.PHONY : circleblooms.cpp.o
+
+circleblooms.i: circleblooms.cpp.i
+
+.PHONY : circleblooms.i
+
+# target to preprocess a source file
+circleblooms.cpp.i:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/circleblooms.cpp.i
+.PHONY : circleblooms.cpp.i
+
+circleblooms.s: circleblooms.cpp.s
+
+.PHONY : circleblooms.s
+
+# target to generate assembly for a file
+circleblooms.cpp.s:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/circleblooms.cpp.s
+.PHONY : circleblooms.cpp.s
+
+decay.o: decay.cpp.o
+
+.PHONY : decay.o
+
+# target to build an object file
+decay.cpp.o:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/decay.cpp.o
+.PHONY : decay.cpp.o
+
+decay.i: decay.cpp.i
+
+.PHONY : decay.i
+
+# target to preprocess a source file
+decay.cpp.i:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/decay.cpp.i
+.PHONY : decay.cpp.i
+
+decay.s: decay.cpp.s
+
+.PHONY : decay.s
+
+# target to generate assembly for a file
+decay.cpp.s:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/decay.cpp.s
+.PHONY : decay.cpp.s
+
 fill.o: fill.cpp.o
 
 .PHONY : fill.o
@@ -312,6 +393,33 @@ renderer.cpp.s:
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/renderer.cpp.s
 .PHONY : renderer.cpp.s
 
+strobe.o: strobe.cpp.o
+
+.PHONY : strobe.o
+
+# target to build an object file
+strobe.cpp.o:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/strobe.cpp.o
+.PHONY : strobe.cpp.o
+
+strobe.i: strobe.cpp.i
+
+.PHONY : strobe.i
+
+# target to preprocess a source file
+strobe.cpp.i:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/strobe.cpp.i
+.PHONY : strobe.cpp.i
+
+strobe.s: strobe.cpp.s
+
+.PHONY : strobe.s
+
+# target to generate assembly for a file
+strobe.cpp.s:
+	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/strobe.cpp.s
+.PHONY : strobe.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -327,6 +435,15 @@ help:
 	@echo "... canvas.o"
 	@echo "... canvas.i"
 	@echo "... canvas.s"
+	@echo "... cellstrobe.o"
+	@echo "... cellstrobe.i"
+	@echo "... cellstrobe.s"
+	@echo "... circleblooms.o"
+	@echo "... circleblooms.i"
+	@echo "... circleblooms.s"
+	@echo "... decay.o"
+	@echo "... decay.i"
+	@echo "... decay.s"
 	@echo "... fill.o"
 	@echo "... fill.i"
 	@echo "... fill.s"
@@ -342,6 +459,9 @@ help:
 	@echo "... renderer.o"
 	@echo "... renderer.i"
 	@echo "... renderer.s"
+	@echo "... strobe.o"
+	@echo "... strobe.i"
+	@echo "... strobe.s"
 .PHONY : help
 
 

@@ -54,7 +54,7 @@ void Renderer::loop() {
 
 	  renderControl(controlFrame);
 
-	  sleep(1.0 / 1000.0);
+	  sleep(1.0 / 10000.0);
 	}
 }
 
@@ -256,6 +256,10 @@ Event Renderer::getEvent(Message &message, int boardIndex) {
 
 
 	return Event(x, y, on);
+}
+
+void Renderer::setGame(int gameIndex) {
+	game = games[gameIndex];
 }
 
 

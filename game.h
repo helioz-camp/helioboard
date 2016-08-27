@@ -71,9 +71,7 @@ class Renderer;
 
 class Controller {
 public:
-    Controller(int numGames) {
-        this->numGames = numGames;
-    };
+    Controller(int numGames) {};
     ~Controller() {};
 
     virtual void update(vector<Event> events) = 0;
@@ -87,11 +85,10 @@ public:
     bool inBounds(int x, int y);
     bool isCorner(int x, int y);
 
-    int numGames;
+    Renderer *renderer;
 
 private:
     State *state;
-    Renderer *renderer;
 };
 
 #endif

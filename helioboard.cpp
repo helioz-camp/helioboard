@@ -4,8 +4,12 @@
 #include <signal.h>
 #include "RtMidi.h"
 #include "blooms.h"
+#include "circleblooms.h"
 #include "fill.h"
 #include "canvas.h"
+#include "strobe.h"
+#include "cellstrobe.h"
+#include "decay.h"
 #include "renderer.h"
 #include "gridcontroller.h"
 
@@ -33,6 +37,8 @@ int main() {
 
   for (int i = 0; i < nPorts; i++) {
     string name = explorer->getPortName(i);
+
+    cout << name << endl;
 
     if (name.find("Launchpad") != string::npos) {
       Board b;
@@ -79,8 +85,16 @@ int main() {
   }
  
   renderer = new Renderer(orderedBoards);
-  renderer->game = new Blooms();
-  renderer->controller = new GridController(2);
+  renderer->games = {
+    new CircleBlooms(),
+    new Canvas(),
+    new Decay(),
+    new Strobe(),
+    new CellStrobe(),
+  };
+  renderer->game = renderer->games[0];
+  renderer->controller = new GridController(renderer->games.size());
+  renderer->controller->renderer = renderer;
 
   
   cout << "Reading MIDI from port ... quit with Ctrl-C.\n";

@@ -50,7 +50,45 @@ canvas.h
 game.h
 /Users/raphael/helioboard/game.h
 
+/Users/raphael/helioboard/cellstrobe.cpp
+cstdlib
+-
+sstream
+-
+cellstrobe.h
+/Users/raphael/helioboard/cellstrobe.h
+
+/Users/raphael/helioboard/cellstrobe.h
+game.h
+/Users/raphael/helioboard/game.h
+
+/Users/raphael/helioboard/circleblooms.cpp
+math.h
+-
+set
+-
+utility
+-
+circleblooms.h
+/Users/raphael/helioboard/circleblooms.h
+
+/Users/raphael/helioboard/circleblooms.h
+game.h
+/Users/raphael/helioboard/game.h
+
 /Users/raphael/helioboard/color.h
+
+/Users/raphael/helioboard/decay.cpp
+cstdlib
+-
+sstream
+-
+decay.h
+/Users/raphael/helioboard/decay.h
+
+/Users/raphael/helioboard/decay.h
+game.h
+/Users/raphael/helioboard/game.h
 
 /Users/raphael/helioboard/fill.cpp
 cstdlib
@@ -97,8 +135,12 @@ gridcontroller.h
 /Users/raphael/helioboard/gridcontroller.h
 
 /Users/raphael/helioboard/gridcontroller.h
+utility
+-
 game.h
 /Users/raphael/helioboard/game.h
+renderer.h
+/Users/raphael/helioboard/renderer.h
 
 /Users/raphael/helioboard/helioboard.cpp
 iostream
@@ -113,10 +155,18 @@ RtMidi.h
 /Users/raphael/helioboard/RtMidi.h
 blooms.h
 /Users/raphael/helioboard/blooms.h
+circleblooms.h
+/Users/raphael/helioboard/circleblooms.h
 fill.h
 /Users/raphael/helioboard/fill.h
 canvas.h
 /Users/raphael/helioboard/canvas.h
+strobe.h
+/Users/raphael/helioboard/strobe.h
+cellstrobe.h
+/Users/raphael/helioboard/cellstrobe.h
+decay.h
+/Users/raphael/helioboard/decay.h
 renderer.h
 /Users/raphael/helioboard/renderer.h
 gridcontroller.h
@@ -147,4 +197,16 @@ sstream
 -
 thread
 -
+
+/Users/raphael/helioboard/strobe.cpp
+cstdlib
+-
+sstream
+-
+strobe.h
+/Users/raphael/helioboard/strobe.h
+
+/Users/raphael/helioboard/strobe.h
+game.h
+/Users/raphael/helioboard/game.h
 
