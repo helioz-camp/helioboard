@@ -123,87 +123,6 @@ helioboard/fast:
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/build
 .PHONY : helioboard/fast
 
-blooms.o: blooms.cpp.o
-
-.PHONY : blooms.o
-
-# target to build an object file
-blooms.cpp.o:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/blooms.cpp.o
-.PHONY : blooms.cpp.o
-
-blooms.i: blooms.cpp.i
-
-.PHONY : blooms.i
-
-# target to preprocess a source file
-blooms.cpp.i:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/blooms.cpp.i
-.PHONY : blooms.cpp.i
-
-blooms.s: blooms.cpp.s
-
-.PHONY : blooms.s
-
-# target to generate assembly for a file
-blooms.cpp.s:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/blooms.cpp.s
-.PHONY : blooms.cpp.s
-
-canvas.o: canvas.cpp.o
-
-.PHONY : canvas.o
-
-# target to build an object file
-canvas.cpp.o:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/canvas.cpp.o
-.PHONY : canvas.cpp.o
-
-canvas.i: canvas.cpp.i
-
-.PHONY : canvas.i
-
-# target to preprocess a source file
-canvas.cpp.i:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/canvas.cpp.i
-.PHONY : canvas.cpp.i
-
-canvas.s: canvas.cpp.s
-
-.PHONY : canvas.s
-
-# target to generate assembly for a file
-canvas.cpp.s:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/canvas.cpp.s
-.PHONY : canvas.cpp.s
-
-cellstrobe.o: cellstrobe.cpp.o
-
-.PHONY : cellstrobe.o
-
-# target to build an object file
-cellstrobe.cpp.o:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/cellstrobe.cpp.o
-.PHONY : cellstrobe.cpp.o
-
-cellstrobe.i: cellstrobe.cpp.i
-
-.PHONY : cellstrobe.i
-
-# target to preprocess a source file
-cellstrobe.cpp.i:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/cellstrobe.cpp.i
-.PHONY : cellstrobe.cpp.i
-
-cellstrobe.s: cellstrobe.cpp.s
-
-.PHONY : cellstrobe.s
-
-# target to generate assembly for a file
-cellstrobe.cpp.s:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/cellstrobe.cpp.s
-.PHONY : cellstrobe.cpp.s
-
 circleblooms.o: circleblooms.cpp.o
 
 .PHONY : circleblooms.o
@@ -231,60 +150,6 @@ circleblooms.cpp.s:
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/circleblooms.cpp.s
 .PHONY : circleblooms.cpp.s
 
-decay.o: decay.cpp.o
-
-.PHONY : decay.o
-
-# target to build an object file
-decay.cpp.o:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/decay.cpp.o
-.PHONY : decay.cpp.o
-
-decay.i: decay.cpp.i
-
-.PHONY : decay.i
-
-# target to preprocess a source file
-decay.cpp.i:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/decay.cpp.i
-.PHONY : decay.cpp.i
-
-decay.s: decay.cpp.s
-
-.PHONY : decay.s
-
-# target to generate assembly for a file
-decay.cpp.s:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/decay.cpp.s
-.PHONY : decay.cpp.s
-
-fill.o: fill.cpp.o
-
-.PHONY : fill.o
-
-# target to build an object file
-fill.cpp.o:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/fill.cpp.o
-.PHONY : fill.cpp.o
-
-fill.i: fill.cpp.i
-
-.PHONY : fill.i
-
-# target to preprocess a source file
-fill.cpp.i:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/fill.cpp.i
-.PHONY : fill.cpp.i
-
-fill.s: fill.cpp.s
-
-.PHONY : fill.s
-
-# target to generate assembly for a file
-fill.cpp.s:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/fill.cpp.s
-.PHONY : fill.cpp.s
-
 game.o: game.cpp.o
 
 .PHONY : game.o
@@ -311,33 +176,6 @@ game.s: game.cpp.s
 game.cpp.s:
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/game.cpp.s
 .PHONY : game.cpp.s
-
-gridcontroller.o: gridcontroller.cpp.o
-
-.PHONY : gridcontroller.o
-
-# target to build an object file
-gridcontroller.cpp.o:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/gridcontroller.cpp.o
-.PHONY : gridcontroller.cpp.o
-
-gridcontroller.i: gridcontroller.cpp.i
-
-.PHONY : gridcontroller.i
-
-# target to preprocess a source file
-gridcontroller.cpp.i:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/gridcontroller.cpp.i
-.PHONY : gridcontroller.cpp.i
-
-gridcontroller.s: gridcontroller.cpp.s
-
-.PHONY : gridcontroller.s
-
-# target to generate assembly for a file
-gridcontroller.cpp.s:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/gridcontroller.cpp.s
-.PHONY : gridcontroller.cpp.s
 
 helioboard.o: helioboard.cpp.o
 
@@ -393,33 +231,6 @@ renderer.cpp.s:
 	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/renderer.cpp.s
 .PHONY : renderer.cpp.s
 
-strobe.o: strobe.cpp.o
-
-.PHONY : strobe.o
-
-# target to build an object file
-strobe.cpp.o:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/strobe.cpp.o
-.PHONY : strobe.cpp.o
-
-strobe.i: strobe.cpp.i
-
-.PHONY : strobe.i
-
-# target to preprocess a source file
-strobe.cpp.i:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/strobe.cpp.i
-.PHONY : strobe.cpp.i
-
-strobe.s: strobe.cpp.s
-
-.PHONY : strobe.s
-
-# target to generate assembly for a file
-strobe.cpp.s:
-	$(MAKE) -f CMakeFiles/helioboard.dir/build.make CMakeFiles/helioboard.dir/strobe.cpp.s
-.PHONY : strobe.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -429,39 +240,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... helioboard"
-	@echo "... blooms.o"
-	@echo "... blooms.i"
-	@echo "... blooms.s"
-	@echo "... canvas.o"
-	@echo "... canvas.i"
-	@echo "... canvas.s"
-	@echo "... cellstrobe.o"
-	@echo "... cellstrobe.i"
-	@echo "... cellstrobe.s"
 	@echo "... circleblooms.o"
 	@echo "... circleblooms.i"
 	@echo "... circleblooms.s"
-	@echo "... decay.o"
-	@echo "... decay.i"
-	@echo "... decay.s"
-	@echo "... fill.o"
-	@echo "... fill.i"
-	@echo "... fill.s"
 	@echo "... game.o"
 	@echo "... game.i"
 	@echo "... game.s"
-	@echo "... gridcontroller.o"
-	@echo "... gridcontroller.i"
-	@echo "... gridcontroller.s"
 	@echo "... helioboard.o"
 	@echo "... helioboard.i"
 	@echo "... helioboard.s"
 	@echo "... renderer.o"
 	@echo "... renderer.i"
 	@echo "... renderer.s"
-	@echo "... strobe.o"
-	@echo "... strobe.i"
-	@echo "... strobe.s"
 .PHONY : help
 
 

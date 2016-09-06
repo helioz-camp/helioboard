@@ -185,9 +185,6 @@ HelioBoard_BINARY_DIR:STATIC=/Users/raphael/helioboard
 //Value Computed by CMake
 HelioBoard_SOURCE_DIR:STATIC=/Users/raphael/helioboard
 
-//pkg-config executable
-PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/local/bin/pkg-config
-
 
 ########################
 # INTERNAL cache entries
@@ -320,44 +317,4 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-CURL_CFLAGS:INTERNAL=-I/usr/local/Cellar/curlpp/0.7.3/include;-I/usr/local/include
-CURL_CFLAGS_I:INTERNAL=
-CURL_CFLAGS_OTHER:INTERNAL=
-CURL_FOUND:INTERNAL=1
-CURL_INCLUDEDIR:INTERNAL=/usr/local/Cellar/curlpp/0.7.3/include
-CURL_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/curlpp/0.7.3/include;/usr/local/include
-CURL_LDFLAGS:INTERNAL=-L/usr/local/Cellar/curlpp/0.7.3/lib;-lcurlpp;-lstdc++;-lcurl
-CURL_LDFLAGS_OTHER:INTERNAL=
-CURL_LIBDIR:INTERNAL=
-CURL_LIBRARIES:INTERNAL=curlpp;stdc++;curl
-CURL_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/curlpp/0.7.3/lib
-CURL_LIBS:INTERNAL=
-CURL_LIBS_L:INTERNAL=
-CURL_LIBS_OTHER:INTERNAL=
-CURL_LIBS_PATHS:INTERNAL=
-CURL_PREFIX:INTERNAL=/usr/local/Cellar/curlpp/0.7.3
-CURL_STATIC_CFLAGS:INTERNAL=-I/usr/local/Cellar/curlpp/0.7.3/include;-I/usr/local/include
-CURL_STATIC_CFLAGS_I:INTERNAL=
-CURL_STATIC_CFLAGS_OTHER:INTERNAL=
-CURL_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/Cellar/curlpp/0.7.3/include;/usr/local/include
-CURL_STATIC_LDFLAGS:INTERNAL=-L/usr/local/Cellar/curlpp/0.7.3/lib;-lcurlpp;-lstdc++;-lcurl
-CURL_STATIC_LDFLAGS_OTHER:INTERNAL=
-CURL_STATIC_LIBDIR:INTERNAL=
-CURL_STATIC_LIBRARIES:INTERNAL=curlpp;stdc++;curl
-CURL_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/Cellar/curlpp/0.7.3/lib
-CURL_STATIC_LIBS:INTERNAL=
-CURL_STATIC_LIBS_L:INTERNAL=
-CURL_STATIC_LIBS_OTHER:INTERNAL=
-CURL_STATIC_LIBS_PATHS:INTERNAL=
-CURL_VERSION:INTERNAL=0.7.3
-CURL_curlpp_INCLUDEDIR:INTERNAL=
-CURL_curlpp_LIBDIR:INTERNAL=
-CURL_curlpp_PREFIX:INTERNAL=
-CURL_curlpp_VERSION:INTERNAL=
-//Details about finding PkgConfig
-FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/local/bin/pkg-config][v0.29.1()]
-//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
-PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
-__pkg_config_checked_CURL:INTERNAL=1
-prefix_result:INTERNAL=
 

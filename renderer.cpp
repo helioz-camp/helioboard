@@ -2,6 +2,8 @@
 #include <cmath>
 #include "renderer.h"
 
+using namespace std;
+
 Renderer::Renderer(vector<Board> boards) {
 	this->boards = boards;
 	for (int y = 0; y < LEN; y++) {
@@ -29,7 +31,7 @@ void Renderer::loop() {
 	  for (int i = 0; i < boards.size(); i++) {
 		while (true) {
 			Message message;
-		  	double stamp = boards[i].in->getMessage(&message);
+		  	boards[i].in->getMessage(&message);
 			int nBytes = message.size();
 		  	if (nBytes == 0) break;
 
@@ -47,12 +49,6 @@ void Renderer::loop() {
 	  game->render(frame);
 
 	  renderGame(frame);
-
-	  ControlFrame controlFrame;
-	  controller->update(controlEvents);
-	  controller->render(controlFrame);
-
-	  renderControl(controlFrame);
 
 	  sleep(1.0 / 10000.0);
 	}

@@ -1,9 +1,40 @@
 #include <math.h>
 #include <set>
 #include <utility>
+#include <algorithm>
+#include <random>
+#include <ctime>
 #include "circleblooms.h"
 
-CircleBloomsState::CircleBloomsState() {}
+CircleBloomsState::CircleBloomsState() {
+	randomizeColors();
+}
+
+void CircleBloomsState::randomizeColors() {
+	for (int y = 0; y < LEN; y++) {
+		for (int x = 0; x < LEN; x++) {
+			colors[y][x] = Color(rand() % 255, 255);
+		}
+	}
+}
+
+int myrandom (int i) { return rand()%i;}
+
+void CircleBlooms::assignSounds() {
+	srand ( unsigned ( time(0) ) );
+	random_shuffle(player->soundz.begin(), player->soundz.end(), myrandom);
+
+	int counter = 0;
+	for (int y = 0; y < LEN; y++) {
+		for (int x = 0; x < LEN; x++) {
+			if (isCorner(x, y)) continue;
+			state->keyToSound[{x, y}] = player->soundz[counter++];
+			if (state->keyToSound[{x, y}] == player->bombSound) {
+				printf("BOMB IS AT: %d | %d\n", x, y);
+			}
+		}
+	}
+}
 
 
 CircleBlooms::CircleBlooms() {
@@ -46,14 +77,42 @@ vector<pair<int, int>> CircleBloom::getPoints() {
 void CircleBlooms::render(Frame &frame) {
 	setAll(frame, OFF);
 
-	for (CircleBloom &b: state->blooms) {
-		for (auto &p : b.getPoints()) {
-			setCell(frame, get<0>(p), get<1>(p), b.color);
+	if (state->exploding) {
+		for (int y = 0; y < LEN; y++) {
+			for (int x = 0; x < LEN; x++) {
+				frame[y][x] = state->colors[y][x];
+			}
+		}
+	} else {
+		for (CircleBloom &b: state->blooms) {
+			for (auto &p : b.getPoints()) {
+				setCell(frame, get<0>(p), get<1>(p), b.color);
+			}
 		}
 	}
 }
 
 void CircleBlooms::update(vector<Event> events) {
+	if (!state->assigned) {
+		assignSounds();
+		state->assigned = true;
+	}
+
+	if (state->exploding && state->hz("exploding", 1)) {
+		state->explodingSeconds++;
+		if (state->explodingSeconds > 2) {
+			state->exploding = false;
+			state->explodingSeconds = -1;
+		}
+	}
+
+	if (state->exploding) {
+		if (state->hz("flash", 10)) {
+			state->randomizeColors();
+		}
+		return;
+	}
+
 	if (state->hz("bloom", 8)){
 		int doneCount = 0;
 		int lastDone = -1;
@@ -85,14 +144,83 @@ void CircleBlooms::update(vector<Event> events) {
 
 	for (Event &e : events) {
 		if (e.on) {
-			// Player::play("/Users/raphael/Downloads/foobaz/66-per-08.wav");
+			string sound = state->keyToSound[{e.x, e.y}];
 
-			CircleBloom b;
-			b.originX = e.x;
-			b.originY = e.y;
-			b.radius = 0;
-			b.color = state->randomColor();
-			state->blooms.push_back(b);
+			player->play(sound);
+
+			if (sound == player->bombSound) {
+				state->blooms.clear();
+				state->exploding = true;
+				assignSounds();
+			} else {
+				CircleBloom b;
+				b.originX = e.x;
+				b.originY = e.y;
+				b.radius = 0;
+				b.color = state->randomColor();
+				state->blooms.push_back(b);
+			}
 		}
 	}
 }
+
+/*
+#ifndef CELLSTROBE_H
+#define CELLSTROBE_H
+
+#include "game.h"
+
+class CellStrobeState : public State {
+public:
+	CellStrobeState();
+	~CellStrobeState() {};
+
+	Frame colors;
+};
+
+class CellStrobe : public Game
+{
+public:
+	CellStrobe();
+	~CellStrobe() {}
+
+	void render(Frame &frame);
+	void update(vector<Event> events);
+
+private:
+	CellStrobeState *state;
+};
+
+#endif
+
+#include <cstdlib>
+#include <sstream>
+#include "cellstrobe.h"
+
+CellStrobeState::CellStrobeState() {
+}
+
+CellStrobe::CellStrobe() {
+	state = new CellStrobeState();
+}
+
+void CellStrobe::render(Frame &frame) {
+	setAll(frame, OFF);
+
+	for (int y = 0; y < LEN; y++) {
+		for (int x = 0; x < LEN; x++) {
+			frame[y][x] = state->colors[y][x];
+		}
+	}
+}
+
+void CellStrobe::update(vector<Event> events) {
+	if (state->hz("flash", 10)) {
+		for (int y = 0; y < LEN; y++) {
+			for (int x = 0; x < LEN; x++) {
+				state->colors[y][x] = Color(rand() % 255, 255);
+			}
+		}
+	}
+}
+*/

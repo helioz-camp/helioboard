@@ -10,8 +10,8 @@
 #include <unistd.h>
 #include <signal.h>
 #include "RtMidi.h"
-#include "sounds.h"
 #include "color.h"
+#include "udpsounds.h"
 
 using namespace std;
 
@@ -63,29 +63,7 @@ public:
     bool inBounds(int x, int y);
     bool isCorner(int x, int y);
 
-private:
-    State *state;
-};
-
-class Renderer;
-
-class Controller {
-public:
-    Controller(int numGames) {};
-    ~Controller() {};
-
-    virtual void update(vector<Event> events) = 0;
-
-    virtual void render(ControlFrame &frame) = 0;
-
-    void setAll(ControlFrame &frame, int color);
-
-    void setCell(ControlFrame &frame, int x, int y, int color);
-
-    bool inBounds(int x, int y);
-    bool isCorner(int x, int y);
-
-    Renderer *renderer;
+    Player *player;
 
 private:
     State *state;

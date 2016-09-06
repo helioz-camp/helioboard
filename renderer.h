@@ -2,8 +2,7 @@
 #define RENDERER_H
 
 #include "RtMidi.h"
-#include "Game.h"
-
+#include "game.h"
 
 #define CTRL_CHANGE 176
 #define NOTE_ON 144
@@ -29,7 +28,6 @@ public:
 	void clear();
 
 	Game *game;
-	Controller *controller;
 
 	vector<Game *> games;
 

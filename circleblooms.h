@@ -2,6 +2,7 @@
 #define CIRCLEBLOOMS_H
 
 #include "game.h"
+#include <map>
 
 class CircleBloom
 {
@@ -23,6 +24,15 @@ public:
 	int lastColor = -500;
 
 	Color randomColor();
+
+	map<pair<int, int>, string> keyToSound;
+	bool assigned = false;
+
+	Frame colors;
+	bool exploding = false;
+	int explodingSeconds = -1;
+	void randomizeColors();
+
 };
 
 class CircleBlooms : public Game
@@ -33,6 +43,7 @@ public:
 
 	void render(Frame &frame);
 	void update(vector<Event> events);
+	void assignSounds();
 
 private:
 	CircleBloomsState *state;

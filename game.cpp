@@ -36,24 +36,3 @@ void Game::setCell(Frame &frame, int x, int y, Color color) {
 	if (!inBounds(x, y)) return;
 	frame[y][x] = color;
 }
-
-void Controller::setAll(ControlFrame &frame, int color) {
-	for (int y = 0; y < BOARD_LEN; y++) {
-		for (int x = 0; x < BOARD_LEN; x++) {
-			frame[y][x] = color;
-		}
-	}
-}
-
-bool Controller::inBounds(int x, int y) {
-	return x >= 0 && y >= 0 && x < BOARD_LEN && y < BOARD_LEN;
-}
-
-bool Controller::isCorner(int x, int y) {
-	return y == 0 && x == BOARD_LEN - 1;
-}
-
-void Controller::setCell(ControlFrame &frame, int x, int y, int color) {
-	if (!inBounds(x, y)) return;
-	frame[y][x] = color;
-}

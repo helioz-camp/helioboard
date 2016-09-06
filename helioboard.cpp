@@ -3,15 +3,8 @@
 #include <unistd.h>
 #include <signal.h>
 #include "RtMidi.h"
-#include "blooms.h"
 #include "circleblooms.h"
-#include "fill.h"
-#include "canvas.h"
-#include "strobe.h"
-#include "cellstrobe.h"
-#include "decay.h"
 #include "renderer.h"
-#include "gridcontroller.h"
 
 using namespace std;
 
@@ -22,7 +15,12 @@ void finish(int sig) {
   renderer->finish();
 }
 
-int main() {
+int main(int argc, char *argv[]) {
+  if (argc != 3) {
+    cout << "Usage is: ./helioboard [audiomixserver address] [full path to folder containing sounds]" << endl;
+    return 0;
+  }
+
   vector<Board> boards;
   vector<Board> orderedBoards;
 
@@ -55,12 +53,12 @@ int main() {
     }
   }
 
-  if (boards.size() != 5) {
-    cout << "Must connect to exactly 4 boards";
+  if (boards.size() != 4) {
+    cout << "Must connect to exactly 4 boards" << endl;
     return false;
   }
 
-  cout << "Touch each square board, clockwise starting from top left. Then, the control board." << endl;
+  cout << "Touch each square board clockwise." << endl;
 
 
   Message message;
@@ -75,6 +73,7 @@ int main() {
       b.in->getMessage(&message);
 
       if (message.size() > 0) {
+        cout << "DONE" << endl;
         b.ordered = true;
         orderedBoards.push_back(b);
       }
@@ -85,16 +84,12 @@ int main() {
   }
  
   renderer = new Renderer(orderedBoards);
-  renderer->games = {
-    new CircleBlooms(),
-    new Canvas(),
-    new Decay(),
-    new Strobe(),
-    new CellStrobe(),
-  };
-  renderer->game = renderer->games[0];
-  renderer->controller = new GridController(renderer->games.size());
-  renderer->controller->renderer = renderer;
+
+  Game *blooms = new CircleBlooms();
+
+  renderer->game = blooms;
+
+  blooms->player = new Player(argv[1], argv[2]);
 
   
   cout << "Reading MIDI from port ... quit with Ctrl-C.\n";
